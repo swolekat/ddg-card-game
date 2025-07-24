@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./assets/common.css">
+    <style>
+        .page2 {
+            padding: 60px 60px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            background: black;
+            padding: 10px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .section-text {
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .grid-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .grid {
+            width: 70%;
+            font-size: 36px;
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            grid-gap: 10px;
+        }
+
+        .grid > *:nth-child(even){
+            text-align: right;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .image-wrapper > img {
+            width: 100%;
+        }
+
+        .image-text {
+            position: absolute;
+            font-size: 36px;
+            top: 70px;
+            left: 60px;
+            width: 440px;
+            text-align: justify;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="page-content page2">
+    <div class="section">
+        <div class="section-header">
+            Package Contents
+        </div>
+        <div class="grid-wrapper">
+            <div class="grid">
+                <div>
+                    Cards
+                </div>
+                <div>
+                    96 Pieces
+                </div>
+                <div>
+                    Spare Cards
+                </div>
+                <div>
+                    2 Pieces
+                </div>
+                <div>
+                    Instruction Manual
+                </div>
+                <div>
+                    1 Piece
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-header">
+            Made For Ages
+        </div>
+        <div class="section-text">
+            6 and older
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-header">
+            Number of People Who Can Play
+        </div>
+        <div class="section-text">
+            2 to 8 People
+        </div>
+    </div>
+    <div class="image-wrapper">
+        <img src="assets/page2.png" />
+        <div class="image-text">
+            The distance of the route determines the score. The game is played in several rounds and the player with the highest total score wins!
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
