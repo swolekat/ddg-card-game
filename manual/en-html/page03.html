@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./assets/common.css">
+    <style>
+        .boxes {
+            flex-grow: 1;
+            padding: 20px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .box {
+            border: 5px solid black;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            height: 525px;
+        }
+
+        .box-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .box-contents {
+            flex-grow: 1;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+
+
+        .card-label {
+            font-size: 34px;
+            position: absolute;
+            white-space: nowrap;
+        }
+
+        .label-line {
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: black;
+        }
+
+        .station-card-diagram {
+            position: relative;
+        }
+
+        .station-card {
+            width: 225px;
+            border: 5px solid black;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
+        }
+
+
+        .stations {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stations-line {
+            display: flex;
+            padding: 5px;
+            background: red;
+            flex-direction: column;
+        }
+
+        .stations-line.yamanote {
+            background: var(--yamanote-green);
+        }
+        .stations-line.kehin {
+            background: var(--kehin-blue);
+        }
+        .stations-line.sanin {
+            background: var(--sanin-red);
+        }
+        .stations-line.tokaido {
+            background: var(--tokaido-orange);
+        }
+
+        .stations-line-title {
+            font-size: 26px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .line-stations {
+            display: flex;
+            background: white;
+            padding: 5px 10px;
+            justify-content: space-between;
+        }
+
+        .line-station {
+            text-align: center;
+        }
+
+        .japanese {
+            font-size: 20px;
+        }
+
+        .distance-card-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            font-size: 34px;
+        }
+
+        .distance-card-item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 10px;
+        }
+
+        .special-number {
+            font-weight: bold;
+            text-align: right;
+            color: white;
+            paint-order: stroke fill;
+            -webkit-text-stroke: 10px black;
+        }
+
+        .distance-card-diagram {
+            position: relative;
+        }
+
+        .distance-card-diagram img {
+            width: 225px;
+            position: absolute;
+            border: 5px solid black;
+            border-radius: 20px;
+        }
+
+        .distance-card-all {
+            bottom: 0;
+            right: 40px;
+        }
+
+        .distance-card {
+            bottom: 20px;
+        }
+
+        #distance-label {
+            left: 40px;
+        }
+
+        #distance-label-line {
+            transform: rotate(-45deg);
+            left: 40px;
+            top: 50px;
+            width: 50px;
+        }
+
+        #distance-line-label {
+            left: 200px
+        }
+
+        #distance-line-label-line {
+            transform: rotate(-50deg);
+            left: 175px;
+            top: 60px;
+            width: 70px;
+        }
+
+        #all-label {
+            left: 300px;
+        }
+
+        #all-label-line {
+            transform: rotate(-120deg);
+            left: 300px;
+            top: 70px;
+            width: 70px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page-content">
+    <div class="arrow-header">
+        <div class="arrow-header-text">
+            Types of Cards
+        </div>
+    </div>
+    <div class="boxes">
+        <div class="box">
+            <div class="box-title">
+                Station Cards.....................16 pieces (1 each)
+            </div>
+            <div class="box-contents">
+                <div class="station-card-diagram">
+                    <img src="../../cards/yamanote700.png" class="station-card"/>
+                    <div class="card-label" id="distance-label">Distance to Destination</div>
+                    <div class="card-label" id="distance-label">Line</div>
+<!--                    <div class="card-label" id="distance-label">Destination</div>-->
+                    <div class="card-label" id="distance-label">Distance marking</div>
+                    <div class="card-label" id="distance-label">Departing Station</div>
+<!--                    <div class="label-line" id="distance-label-line"></div>-->
+<!--                    <div class="card-label" id="distance-line-label">Line</div>-->
+<!--                    <div class="label-line" id="distance-line-label-line"></div>-->
+<!--                    <div class="card-label" id="all-label">Affects All Lines</div>-->
+<!--                    <div class="label-line" id="all-label-line"></div>-->
+                </div>
+                <div class="stations">
+                    <div class="stations-line yamanote">
+                        <div class="stations-line-title">
+                            山手線 (Yamanote Line)
+                        </div>
+                        <div class="line-stations">
+                            <div class="line-station">
+                                <div class="english">
+                                    Shibuya
+                                </div>
+                                <div class="japanese">
+                                    渋谷
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Ebisu
+                                </div>
+                                <div class="japanese">
+                                    恵比寿
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Shinbashi
+                                </div>
+                                <div class="japanese">
+                                    新橋
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Yurakucho
+                                </div>
+                                <div class="japanese">
+                                    有楽町
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stations-line kehin">
+                        <div class="stations-line-title">
+                            京浜東北線 (Keihin–Tohoku Line)
+                        </div>
+                        <div class="line-stations">
+                            <div class="line-station">
+                                <div class="english">
+                                    Shinagawa
+                                </div>
+                                <div class="japanese">
+                                    品川
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Omori
+                                </div>
+                                <div class="japanese">
+                                    大森
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Kawasaki
+                                </div>
+                                <div class="japanese">
+                                    川崎
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Higashi Kanagawa
+                                </div>
+                                <div class="japanese">
+                                    東神奈川
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stations-line sanin">
+                        <div class="stations-line-title">
+                            山陰本線 (San'in Main Line)
+                        </div>
+                        <div class="line-stations">
+                            <div class="line-station">
+                                <div class="english">
+                                    Kameoka
+                                </div>
+                                <div class="japanese">
+                                    亀岡
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Umahori
+                                </div>
+                                <div class="japanese">
+                                    馬堀
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Hozukyo
+                                </div>
+                                <div class="japanese">
+                                    保津峡
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Tambaguchi
+                                </div>
+                                <div class="japanese">
+                                    丹波口
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stations-line tokaido">
+                        <div class="stations-line-title">
+                            東海道本線 (Tokaido Main Line)
+                        </div>
+                        <div class="line-stations">
+                            <div class="line-station">
+                                <div class="english">
+                                    Kyto
+                                </div>
+                                <div class="japanese">
+                                    京都
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Takatsuki
+                                </div>
+                                <div class="japanese">
+                                    高槻
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Ibaraki
+                                </div>
+                                <div class="japanese">
+                                    茨木
+                                </div>
+                            </div>
+                            <div class="line-station">
+                                <div class="english">
+                                    Shin-Osaka
+                                </div>
+                                <div class="japanese">
+                                    新大阪
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">
+                Distance Cards....................54 pieces
+            </div>
+            <div class="box-contents">
+                <div class="distance-card-diagram">
+                    <img src="../../cards/all250.png" class="distance-card-all"/>
+                    <img src="../../cards/yamanote150.png" class="distance-card"/>
+                    <div class="card-label" id="distance-label">Distance</div>
+                    <div class="label-line" id="distance-label-line"></div>
+                    <div class="card-label" id="distance-line-label">Line</div>
+                    <div class="label-line" id="distance-line-label-line"></div>
+                    <div class="card-label" id="all-label">Affects All Lines</div>
+                    <div class="label-line" id="all-label-line"></div>
+                </div>
+                <div class="distance-card-list">
+                    <div class="distance-card-item">
+                        <span class="special-number">50</span> <span>(4 lines, 3 cards each)</span>
+                    </div>
+                    <div class="distance-card-item">
+                        <span class="special-number">100</span> <span>(4 lines, 3 cards each)</span>
+                    </div>
+                    <div class="distance-card-item">
+                        <span class="special-number">150</span> <span>(4 lines, 3 cards each)</span>
+                    </div>
+                    <div class="distance-card-item">
+                        <span class="special-number">200</span> <span>(4 lines, 3 cards each)</span>
+                    </div>
+                    <div class="distance-card-item">
+                        <span class="special-number">250</span> <span>(All the Lines 4 cards)</span>
+                    </div>
+                    <div class="distance-card-item">
+                        <span class="special-number">500</span> <span>(All the Lines 2 cards)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

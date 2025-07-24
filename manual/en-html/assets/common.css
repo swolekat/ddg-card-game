@@ -2,6 +2,7 @@
     box-sizing: border-box;
     font-family: "Trebuchet MS", sans-serif;
 }
+
 html, body {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ html, body {
     width: 100%;
     background: #f00;
 }
+
 body {
     padding: 10px;
 }
@@ -17,8 +19,39 @@ body {
     width: 1000px;
     height: 1275px;
     background: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 :root {
     --yamanote-green: #9ACD32;
+    --kehin-blue: #00BFFF;
+    --tokaido-orange: #FFA500;
+    --sanin-red: #DA0442;
+}
+
+.arrow-header {
+    margin-top: 50px;
+
+    display: flex;
+}
+
+.arrow-header-text {
+    font-weight: bold;
+    color: #fff;
+    background: black;
+    font-size: 48px;
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.arrow-header:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 48px solid transparent;
+    border-bottom: 48px solid transparent;
+    border-left: 150px solid black;
+    margin-right: 20px;
 }

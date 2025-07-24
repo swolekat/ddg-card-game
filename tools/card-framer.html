@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *, *:before, *:after {
+      box-sizing: border-box;
+      font-family: "Trebuchet MS", sans-serif;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: #f00;
+    }
+    body {
+      padding: 20px;
+    }
+
+    .frame {
+      width: 658px;
+      height: 1030px;
+      border-radius: 50px;
+      overflow: hidden;
+      position: relative;
+      background: black;
+    }
+
+    .frame:after {
+      content: '';
+      position: absolute;
+      border: 20px solid white;
+      border-radius: 50px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%
+    }
+
+    img {
+      /*width: 96%;*/
+      /*width: 98%;*/
+      /*width: 99%;*/
+      width: 100%;
+        margin-left: -10px;
+      /*margin-top: -5px;*/
+      /*  transform: rotate(-0.5deg);*/
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <img src="../scans/IMG_20250724_0049.jpg" />
+  </div>
+
+</body>
+</html>
