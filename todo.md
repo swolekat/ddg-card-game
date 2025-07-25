@@ -1,5 +1,4 @@
 Manual:
-* page 8 - hard
 * page 9 - hard
 * page 12 - hard
 * page 13 - hard
