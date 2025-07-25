@@ -4,60 +4,56 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./assets/common.css">
-  <style>
-    .top-section{
-        background: var(--yamanote-green);
-        padding: 20px 150px;
-        height: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .ddg-logo {
-        width: 100%;
-    }
+    <style>
+        .top-section {
+            padding: 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            font-size: 36px;
+            gap: 20px;
+        }
 
-    .card-game {
-        width: 300px;
-    }
 
-    .game-instructions {
-        font-size: 48px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
+        .bottom-section {
+            padding: 20px;
+            display: flex;
+            font-size: 36px;
+            background: black;
+            color: #fff;
+            justify-content: space-between;
+        }
 
-    .bottom-section {
-        padding: 60px 100px;
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 48px;
-        justify-content: space-between;
-    }
+        .disclaimers {
+            flex-direction: column;
+            gap: 10px;
+            font-size: 28px;
+            color: #666;
+        }
 
-  </style>
+    </style>
 </head>
 <body>
-  <div class="page-content">
+<div class="page-content">
     <div class="top-section">
-        <img src="assets/ddgLogo.webp" class="ddg-logo" />
-        <img src="assets/card-game.png" class="card-game" />
-        <div class="game-instructions">
-            Game Instructions
+        <div class="step">
+            2) The dealer draws one card from the deck, adds it to their hand and then plays one station card. If they don't have a station, they must discard a card and put it face up in the discard pile. The next player takes their turn and does the same actions.
+        </div>
+        <div class="disclaimers">
+            <div>
+                ※ A train is running on the line designated by the station card.
+            </div>
+            <div>
+                ※ You cannot play multiple stations for the same line. Remember lines are color coded. Each person can have a maximum of 4 active stations because there are 4 lines.
+            </div>
+            <div>
+                ※ You can only play one card during your turn.
+            </div>
         </div>
     </div>
-      <div class="bottom-section">
-          <div class="paragraph">
-            Drive the train from station to station and stop it exactly! Watch out for accidents and make sure to obey the signals. Use all sorts of tricks to slow down your opponents and reach the station before anyone else!
-          </div>
-          <div>
-              Become a train god! 「DENSHA DE GO!」
-          </div>
-          <img src="assets/matsudaya%20logo.png" class="matsudaya-logo" />
-      </div>
-  </div>
-
+    <div class="bottom-section">
+        You draw one card then play one card so you will always have 4 cards in your hand.
+    </div>
+</div>
 </body>
 </html>

@@ -4,60 +4,325 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./assets/common.css">
-  <style>
-    .top-section{
-        background: var(--yamanote-green);
-        padding: 20px 150px;
-        height: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .ddg-logo {
-        width: 100%;
-    }
+    <style>
+        .main-content {
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-grow: 1;
+        }
 
-    .card-game {
-        width: 300px;
-    }
+        .step {
+            font-size: 36px;
+        }
 
-    .game-instructions {
-        font-size: 48px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
+        .disclaimer {
+            font-size: 28px;
+            color: #666;
+        }
 
-    .bottom-section {
-        padding: 60px 100px;
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 48px;
-        justify-content: space-between;
-    }
+        .diagram {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+        }
 
-  </style>
+        .area-diagram {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            background: #ccc;
+            border: 2px dashed black;
+            padding: 10px;
+            top: 40px;
+            left: 100px;
+            z-index: 1;
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            font-size: 24px;
+            gap: 20px;
+        }
+
+        .area-column {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .line-name {
+            text-align: center;
+            margin-top: -40px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 5px;
+            height: 150px;
+            text-align: center;
+            margin-bottom: -100px;
+        }
+
+
+        .card.sanin {
+            background: var(--sanin-red);
+        }
+        .card.tokaido {
+            background: var(--tokaido-orange);
+        }
+        .card.yamanote {
+            background: var(--yamanote-green);
+        }
+
+        .area-name {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 28px;
+        }
+
+        .hand-diagram {
+            position: absolute;
+            top: 340px;
+            left: 60px;
+            z-index: 2;
+            width: 400px;
+            height: 300px;
+        }
+
+        .hand-diagram-content {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .hand-card {}
+
+        .hand-card {
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 5px;
+            height: 150px;
+            width: 100px;
+            background: white;
+            text-align: center;
+            font-size: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .hand-card.sanin {
+            background: var(--sanin-red);
+        }
+        .hand-card.tokaido {
+            background: var(--tokaido-orange);
+        }
+        .hand-card.yamanote {
+            background: var(--yamanote-green);
+        }
+
+        #card1 {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            transform: rotate(-20deg);
+        }
+        #card2 {
+            position: absolute;
+            top: 35px;
+            left: 120px;
+            transform: rotate(-10deg);
+        }
+        #card3 {
+            position: absolute;
+            top: 35px;
+            right: 80px;
+            transform: rotate(10deg);
+        }
+        #card4 {
+            position: absolute;
+            top: 50px;
+            right: 40px;
+            transform: rotate(20deg);
+        }
+        #card5 {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            transform: rotate(30deg);
+        }
+
+        .hand-label {
+            background: black;
+            color: white;
+            font-weight: bold;
+            font-size: 28px;
+            padding: 10px;
+            display: inline-block;
+            position: absolute;
+            bottom: 50px;
+            right: 120px;
+        }
+
+        .label {
+            font-size: 24px;
+            position: absolute
+        }
+
+        #can-play-label {
+            bottom: 50px;
+            left: 0;
+        }
+
+        #cant-play-label {
+            bottom: 0;
+            left: 0;
+            width: 600px;
+        }
+
+        .label-line {
+            height: 3px;
+            width: 100px;
+            position: absolute;
+            background: black;
+        }
+
+        #can-play-label-line {
+            width: 40px;
+            transform: rotate(-60deg);
+            bottom: 100px;
+            left: 40px;
+        }
+
+        #cant-play-label-line {
+            width: 100px;
+            transform: rotate(-60deg);
+            bottom: 68px;
+            left: 80px;
+        }
+
+        .tetsu-chan-diagram {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            z-index: 3;
+        }
+
+        .tetsu-chan-diagram-content {
+
+        }
+
+        .tetsu-chan-text {
+            font-size: 30px;
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            width: 300px;
+        }
+
+
+    </style>
 </head>
 <body>
-  <div class="page-content">
-    <div class="top-section">
-        <img src="assets/ddgLogo.webp" class="ddg-logo" />
-        <img src="assets/card-game.png" class="card-game" />
-        <div class="game-instructions">
-            Game Instructions
+<div class="page-content">
+    <div class="arrow-header">
+        <div class="arrow-header-text">
+            How to Play
         </div>
     </div>
-      <div class="bottom-section">
-          <div class="paragraph">
-            Drive the train from station to station and stop it exactly! Watch out for accidents and make sure to obey the signals. Use all sorts of tricks to slow down your opponents and reach the station before anyone else!
-          </div>
-          <div>
-              Become a train god! 「DENSHA DE GO!」
-          </div>
-          <img src="assets/matsudaya%20logo.png" class="matsudaya-logo" />
-      </div>
-  </div>
-
+    <div class="main-content">
+        <div class="step">
+            3) When you play a Station Card, you've started moving a train on a line. You can play distance cards from your hand to advance the train. The total of distance cards played is the distance the train has travelled. You MUST call out the distance traveled and how much remaining on each line.
+        </div>
+        <div class="disclaimer">
+            ※ You cannot play a distance card that would put your total of distance cards for a line over the distance indicated by the station as you would go past your destination!
+        </div>
+        <div class="diagram">
+            <div class="area-diagram">
+                <div class="area-grid">
+                    <div class="area-column">
+                        <div class="line-name">
+                            San'in
+                        </div>
+                        <div class="card sanin">
+                            Station 450
+                        </div>
+                        <div class="card sanin">
+                            100
+                        </div>
+                    </div>
+                    <div class="area-column">
+                        <div class="line-name">
+                            Tokaido
+                        </div>
+                        <div class="card tokaido">
+                            Station 800
+                        </div>
+                        <div class="card tokaido">
+                            500
+                        </div>
+                        <div class="card tokaido">
+                            200
+                        </div>
+                    </div>
+                    <div class="area-column">
+                        <div class="line-name">
+                            Yamanote
+                        </div>
+                        <div class="card yamanote">
+                            Station 500
+                        </div>
+                    </div>
+                </div>
+                <div class="area-name">
+                    My Area
+                </div>
+            </div>
+            <div class="hand-diagram">
+                <div class="hand-diagram-content">
+                    <div class="hand-card tokaido" id="card1">
+                        <div>Tokaido</div>
+                        <div>50</div>
+                    </div>
+                    <div class="hand-card tokaido" id="card2">
+                        <div>Tokaido</div>
+                        <div>150</div>
+                    </div>
+                    <div class="hand-card" id="card3">
+                    </div>
+                    <div class="hand-card" id="card4">
+                    </div>
+                    <div class="hand-card" id="card5">
+                    </div>
+                    <div class="hand-label">
+                        HAND
+                    </div>
+                    <div class="label can-play-label" id="can-play-label">
+                        Can Play
+                    </div>
+                    <div class="label-line" id="can-play-label-line"></div>
+                    <div class="label cant-play-label" id="cant-play-label">
+                        Can't Play. Sum would be greater than station.
+                    </div>
+                    <div class="label-line" id="cant-play-label-line"></div>
+                </div>
+            </div>
+            <div class="tetsu-chan-diagram">
+                <div class="tetsu-chan-diagram-content">
+                    <img src="./assets/page7.png" />
+                    <div class="tetsu-chan-text">
+                        If you play the 50 distance card, shout <b>"Advanced to 750. 50 left!"</b> UwU
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
