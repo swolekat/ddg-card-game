@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./assets/common.css">
+    <style>
+        .page4 {
+            padding: 30px 10px;
+        }
+
+        .boxes {
+            flex-grow: 1;
+            padding: 20px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .box {
+            border: 5px solid black;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            height: 525px;
+        }
+
+        .box-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .box-contents {
+            flex-grow: 1;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .card-diagram {
+            position: relative;
+        }
+
+        .card-diagram img {
+            width: 225px;
+            border: 5px solid black;
+            border-radius: 25px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .card-diagram img:nth-child(2) {
+            left: 100px;
+            top: 30px;
+        }
+
+        .card-diagram img:nth-child(3) {
+            left: 200px;
+            top: 60px;
+        }
+
+        .card-list {
+            font-size: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card-item {
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            align-items: center;
+            grid-gap: 10px;
+        }
+
+        .card-name {
+            font-weight: bold;
+        }
+
+
+
+        .side-by-side-box {
+            flex-direction: row;
+            height: auto;
+            justify-content: space-between;
+        }
+
+        .side-by-side-text {
+            font-size: 36px;
+            width: 250px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page-content page4">
+    <div class="boxes">
+        <div class="box">
+            <div class="box-title">
+                Interruption Cards.....................11 pieces
+            </div>
+            <div class="box-contents">
+                <div class="card-diagram">
+                    <img src="../../cards/railroadCrossingAccident.png"/>
+                    <img src="../../cards/caution100.png"/>
+                    <img src="../../cards/drivingSuspension.png"/>
+                </div>
+                <div class="card-list">
+                    <div class="card-item">
+                        <div class="card-name">
+                            STOP Signal
+                        </div>
+                        <div class="card-number">
+                            4 pieces
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-name">
+                            CAUTION Signal
+                        </div>
+                        <div class="card-number">
+                            2 pieces
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-name">
+                            Railroad Crossing Accident
+                        </div>
+                        <div class="card-number">
+                            2 pieces
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-name">
+                            Slow Leading Train
+                        </div>
+                        <div class="card-number">
+                            1 pieces
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-name">
+                            Line Shut Down
+                        </div>
+                        <div class="card-number">
+                            2 pieces
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">
+                Guard Cards....................15 pieces
+            </div>
+            <div class="box-contents">
+                <div class="card-diagram">
+                    <img src="../../cards/emergencyBreak.png"/>
+                    <img src="../../cards/go.png"/>
+                </div>
+                <div class="card-list">
+                    <div class="card-item">
+                        <div class="card-name">
+                            GO Signal
+                        </div>
+                        <div class="card-number">
+                            8 pieces
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-name">
+                            Emergency Break
+                        </div>
+                        <div class="card-number">
+                            7 pieces
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box side-by-side-box">
+            <div class="box-title">
+                Spare Cards....................2 pieces
+            </div>
+            <div class="side-by-side-text">
+                Use these if you lose cards.
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -55,3 +55,46 @@ body {
     border-left: 150px solid black;
     margin-right: 20px;
 }
+
+.card-description-page {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-description-page-title {
+    font-weight: bold;
+    font-size: 36px
+}
+
+.card-description-page-description {
+    font-size: 34px;
+    padding: 0 30px;
+}
+
+.card-and-description {
+    display: flex;
+    gap: 40px;
+}
+
+.card-and-description img {
+    width: 250px;
+    border: 5px solid black;
+    border-radius: 25px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 36px
+}
+
+.card-description {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.card-disclaimer{
+    font-size: 30px;
+    margin-top: 20px;
+}

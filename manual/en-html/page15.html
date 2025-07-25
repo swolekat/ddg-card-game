@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./assets/common.css">
+    <style>
+        .score-page-content {
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .description {
+            font-size: 36px;
+        }
+
+        .disclaimer {
+            font-size: 28px;
+            color: #666;
+        }
+
+        .game-table {
+            background: black;
+            border: 10px solid black;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            font-size: 36px;
+            gap: 5px;
+        }
+
+        .game-table * {
+            background: white;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 36px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page-content">
+    <div class="arrow-header">
+        <div class="arrow-header-text">
+            Calculating Scores
+        </div>
+    </div>
+    <div class="score-page-content">
+        <div class="section">
+            <div class="description">
+                The first person to match the sum of their distance cards to the station card wins. Remember if you go over, that line does not count. The distance on the station is the number of points you get for winning. After playing several rounds, the player with the greatest sum of points wins.
+            </div>
+            <div class="disclaimer">
+                ※ You get 0 points if you do not win the round.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="description">
+                Example: 4 people play 5 rounds
+            </div>
+            <div class="game-table">
+                <div>Name</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>Total</div>
+
+                <div>A</div>
+                <div>450</div>
+                <div>0</div>
+                <div>500</div>
+                <div>0</div>
+                <div>0</div>
+                <div>950</div>
+
+                <div>B</div>
+                <div>0</div>
+                <div>0</div>
+                <div>0</div>
+                <div>800</div>
+                <div>0</div>
+                <div>800</div>
+
+                <div>C</div>
+                <div>0</div>
+                <div>600</div>
+                <div>0</div>
+                <div>0</div>
+                <div>550</div>
+                <div>1150</div>
+
+                <div>D</div>
+                <div>0</div>
+                <div>0</div>
+                <div>0</div>
+                <div>0</div>
+                <div>0</div>
+                <div>0</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="title">
+                RESULT
+            </div>
+            <div class="description">
+                After 5 rounds Player C got 1150 points. Because that is the largest amount, Player C is the TRAIN GOD.
+            </div>
+            <div class="disclaimer">
+                ※ Play as many rounds as you want.
+            </div>
+            <div class="disclaimer">
+                ※ Gambling is bad mmkay?
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
