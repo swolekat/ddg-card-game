@@ -4,60 +4,201 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./assets/common.css">
-  <style>
-    .top-section{
-        background: var(--yamanote-green);
-        padding: 20px 150px;
-        height: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .ddg-logo {
-        width: 100%;
-    }
+    <style>
+        .main-content {
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
 
-    .card-game {
-        width: 300px;
-    }
+        .step {
+            font-size: 36px;
+        }
 
-    .game-instructions {
-        font-size: 48px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
+        .disclaimer {
+            font-size: 28px;
+            color: #666;
+        }
 
-    .bottom-section {
-        padding: 60px 100px;
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 48px;
-        justify-content: space-between;
-    }
+        .diagram-plus-tetsu-chan {
+            flex-grow: 1;
+            position: relative;
+        }
 
-  </style>
+        .area-diagram {
+            position: absolute;
+            width: 500px;
+            height: 350px;
+            background: #ccc;
+            border: 2px dashed black;
+            padding: 10px;
+            top: 40px;
+            left: 30px;
+            z-index: 1;
+            transform: rotate(180deg);
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            font-size: 24px;
+            gap: 20px;
+        }
+
+        .area-column {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .card {
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 5px;
+            height: 200px;
+            text-align: center;
+            margin-bottom: -160px;
+            background: #ccc;
+        }
+
+        .right-side-up-diagram {
+            position: absolute;
+            width: 500px;
+            height: 350px;
+            top: 40px;
+            left: 30px;
+            z-index: 2;
+        }
+
+        .right-side-up-diagram .card {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 0;
+            width: 150px;
+            position: absolute;
+            font-size: 24px;
+        }
+
+        #emergency-card {
+            right: 170px;
+            top: 0px;
+            transform: rotate(20deg);
+        }
+
+        #signal-card {
+            right: 10px;
+            top: 90px;
+        }
+
+        .area-name {
+            font-size: 24px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .tetsu-chan {
+            position: absolute;
+            width: 500px;
+            top: 0;
+            right: 0;
+            z-index: 3;
+        }
+
+        .tetsu-chan-wrapper {
+            width: 100%;
+            position: relative;
+        }
+
+        .tetsu-chan-wrapper img {
+            width: 100%;
+        }
+
+        .tetsu-chan-text {
+            position: absolute;
+            bottom: 80px;
+            left: 30px;
+            font-size: 48px;
+            width: 410px;
+        }
+    </style>
 </head>
 <body>
-  <div class="page-content">
-    <div class="top-section">
-        <img src="assets/ddgLogo.webp" class="ddg-logo" />
-        <img src="assets/card-game.png" class="card-game" />
-        <div class="game-instructions">
-            Game Instructions
+<div class="page-content">
+    <div class="arrow-header">
+        <div class="arrow-header-text">
+            How to use Interference Cards
         </div>
     </div>
-      <div class="bottom-section">
-          <div class="paragraph">
-            Drive the train from station to station and stop it exactly! Watch out for accidents and make sure to obey the signals. Use all sorts of tricks to slow down your opponents and reach the station before anyone else!
-          </div>
-          <div>
-              Become a train god! 「DENSHA DE GO!」
-          </div>
-          <img src="assets/matsudaya%20logo.png" class="matsudaya-logo" />
-      </div>
-  </div>
+    <div class="main-content">
+        <div class="step">
+            There are two types of interference cards: Signal cards and Emergency Cards. In order to make Tetsu-chan proud, you must disrupt your opponent. Place these types of cards on an opponent's Station or Distance cards.
+        </div>
+        <div class="disclaimer">
+            ※ You can play these cards on ANY opponent no matter the order!
+        </div>
+        <div class="disclaimer">
+            ※ It's possible to disrupt others, even if you have no lines.
+        </div>
+        <div class="disclaimer">
+            ※ You can NOT play these on an already blocked line.
+        </div>
+        <div class="diagram-plus-tetsu-chan">
+            <div class="area-diagram">
+                <div class="area-grid">
+                    <div class="area-column">
+                        <div class="card">
+                            Station 450
+                        </div>
+                        <div class="card">
+                            100
+                        </div>
+                    </div>
+                    <div class="area-column">
+                        <div class="card">
+                            Station 800
+                        </div>
+                        <div class="card">
+                            500
+                        </div>
+                        <div class="card">
+                            200
+                        </div>
+                    </div>
+                    <div class="area-column">
+                        <div class="card">
+                            Station 500
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side-up-diagram">
+                <div class="right-side-up-diagram-content">
+                    <div class="card" id="emergency-card">
+                        Emergency Card
+                    </div>
+                    <div class="card" id="signal-card">
+                        Signal Card
+                    </div>
+                    <div class="area-name">
+                        Opponent's Area
+                    </div>
+                </div>
+            </div>
+            <div class="tetsu-chan">
+                <div class="tetsu-chan-wrapper">
+                    <img src="assets/page9.png"/>
+                    <div class="tetsu-chan-text">
+                        Chaos is always the <b>BEST</b> policy <3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>
