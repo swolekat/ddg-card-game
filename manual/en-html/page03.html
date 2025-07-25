@@ -36,8 +36,6 @@
             grid-template-columns: 1fr 1fr;
         }
 
-
-
         .card-label {
             font-size: 34px;
             position: absolute;
@@ -61,6 +59,40 @@
             border-radius: 10px;
             position: absolute;
             bottom: 0;
+        }
+
+        #distance-destination-label {
+
+        }
+
+        #station-line-label {
+            left: 250px;
+            top: 100px;
+        }
+
+        #station-label {
+            left: 250px;
+            top: 300px;
+            white-space: wrap;
+            width: 200px
+        }
+
+        #distance-destination-label-line {
+            width: 60px;
+            rotate: 90deg;
+            top: 70px;
+        }
+
+        #station-line-label-line {
+            width: 40px;
+            top: 120px;
+            left: 210px;
+        }
+
+        #station-label-line {
+            width: 40px;
+            top: 320px;
+            left: 210px;
         }
 
 
@@ -203,16 +235,12 @@
             <div class="box-contents">
                 <div class="station-card-diagram">
                     <img src="../../cards/yamanote700.png" class="station-card"/>
-                    <div class="card-label" id="distance-label">Distance to Destination</div>
-                    <div class="card-label" id="distance-label">Line</div>
-<!--                    <div class="card-label" id="distance-label">Destination</div>-->
-                    <div class="card-label" id="distance-label">Distance marking</div>
-                    <div class="card-label" id="distance-label">Departing Station</div>
-<!--                    <div class="label-line" id="distance-label-line"></div>-->
-<!--                    <div class="card-label" id="distance-line-label">Line</div>-->
-<!--                    <div class="label-line" id="distance-line-label-line"></div>-->
-<!--                    <div class="card-label" id="all-label">Affects All Lines</div>-->
-<!--                    <div class="label-line" id="all-label-line"></div>-->
+                    <div class="card-label" id="distance-destination-label">Distance to Destination</div>
+                    <div class="label-line" id="distance-destination-label-line"></div>
+                    <div class="card-label" id="station-line-label">Line</div>
+                    <div class="label-line" id="station-line-label-line"></div>
+                    <div class="card-label" id="station-label">Departing Station</div>
+                    <div class="label-line" id="station-label-line"></div>
                 </div>
                 <div class="stations">
                     <div class="stations-line yamanote">
