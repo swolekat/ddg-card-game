@@ -76,6 +76,7 @@ body {
 .card-and-description {
     display: flex;
     gap: 40px;
+    align-items: flex-start;
 }
 
 .card-and-description img {
