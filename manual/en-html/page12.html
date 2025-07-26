@@ -4,60 +4,201 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./assets/common.css">
-  <style>
-    .top-section{
-        background: var(--yamanote-green);
-        padding: 20px 150px;
-        height: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .ddg-logo {
-        width: 100%;
-    }
+    <style>
+        .card-diagram {
+            position: relative;
+            width: 100%;
+            height: 500px
+        }
 
-    .card-game {
-        width: 300px;
-    }
+        .area-diagram {
+            position: absolute;
+            width: 500px;
+            height: 350px;
+            background: #ccc;
+            border: 2px dashed black;
+            padding: 10px;
+            top: 50px;
+            left: 100px;
+            z-index: 1;
+        }
 
-    .game-instructions {
-        font-size: 48px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
+        .area-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            font-size: 24px;
+            gap: 20px;
+        }
 
-    .bottom-section {
-        padding: 60px 100px;
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 48px;
-        justify-content: space-between;
-    }
+        .area-column {
+            display: flex;
+            flex-direction: column;
 
-  </style>
+        }
+
+        .line-name {
+            text-align: center;
+            margin-top: -40px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 5px;
+            height: 200px;
+            text-align: center;
+            margin-bottom: -160px;
+        }
+
+        .card.missing {
+            background: #ccc;
+            border: 2px dashed black;
+        }
+        .card.sanin {
+            background: var(--sanin-red);
+        }
+        .card.tokaido {
+            background: var(--tokaido-orange);
+        }
+        .card.yamanote {
+            background: var(--yamanote-green);
+        }
+        .card.line-shut-down {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .arrow {
+            width: 250px;
+            position: absolute;
+            top: 200px;
+            left: 300px
+        }
+
+        #discarded {
+            position: absolute;
+            width: 145px;
+            font-size: 24px;
+            top: 0;
+            right: -220px;
+        }
+
+        .discarded-text {
+            font-size: 24px;
+            width: 300px;
+            position: absolute;
+            bottom: -80px;
+            right: -350px;
+        }
+
+        .tetsu-chan-diagram {
+            position: relative;
+            width: 100%;
+        }
+        .tetsu-chan-diagram img {
+            width: 100%;
+            margin-left: -20px;
+        }
+        .tetsu-chan-text {
+            position: absolute;
+            top: 130px;
+            left: 40px;
+            width: 400px;
+            font-size: 30px;
+            text-align: center;
+
+        }
+    </style>
 </head>
 <body>
-  <div class="page-content">
-    <div class="top-section">
-        <img src="assets/ddgLogo.webp" class="ddg-logo" />
-        <img src="assets/card-game.png" class="card-game" />
-        <div class="game-instructions">
-            Game Instructions
+<div class="page-content card-description-page">
+    <div class="card-and-description">
+        <img src="../../cards/drivingSuspension.png"/>
+        <div class="card-and-description-content">
+            <div class="card-title">
+                ●「Line Shut Down Card」
+            </div>
+            <div class="card-description">
+                When this card is played, the entire line is discarded. There is no corresponding guard card, so there's nothing that can be done.
+            </div>
+            <div class="card-disclaimer">
+                ※ The target will take their turn, skipping everyone else.
+            </div>
+            <div class="card-disclaimer">
+                ※ All cards for the affected line must be discarded.
+            </div>
         </div>
     </div>
-      <div class="bottom-section">
-          <div class="paragraph">
-            Drive the train from station to station and stop it exactly! Watch out for accidents and make sure to obey the signals. Use all sorts of tricks to slow down your opponents and reach the station before anyone else!
-          </div>
-          <div>
-              Become a train god! 「DENSHA DE GO!」
-          </div>
-          <img src="assets/matsudaya%20logo.png" class="matsudaya-logo" />
-      </div>
-  </div>
+    <div class="card-diagram">
+        <div class="area-diagram">
+            <div class="area-grid">
+                <div class="area-column">
+                    <div class="line-name">
+                        San'in
+                    </div>
+                    <div class="card sanin">
+                        Station 450
+                    </div>
+                    <div class="card sanin">
+                        100
+                    </div>
+                </div>
+                <div class="area-column">
+                    <div class="line-name">
+                        Tokaido
+                    </div>
+                    <div class="card missing">
+                        Station 800
+                    </div>
+                    <div class="card missing">
+                        500
+                    </div>
+                    <div class="card missing">
+                        200
+                    </div>
+                    <div class="card line-shut-down">
+                        Line Shut Down
+                    </div>
+                </div>
+                <div class="area-column">
+                    <div class="line-name">
+                        Yamanote
+                    </div>
+                    <div class="card yamanote">
+                        Station 500
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/page12Arrow.png" class="arrow"/>
+            <div class="area-column" id="discarded">
+                <div class="card tokaido">
+                    Station 800
+                </div>
+                <div class="card tokaido">
+                    500
+                </div>
+                <div class="card tokaido">
+                    200
+                </div>
+                <div class="card line-shut-down">
+                    Line Shut Down
+                </div>
+            </div>
+            <div class="discarded-text">
+                Discard the station, all distance cards, and the Line Shut Down card.
+            </div>
+        </div>
+    </div>
+    <div class="tetsu-chan-diagram">
+        <img src="assets/page12.png" />
+        <div class="tetsu-chan-text">
+            It's no use! The Line Shut Down card is too powerful!
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
