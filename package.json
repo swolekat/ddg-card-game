@@ -1,0 +1,23 @@
+{
+  "name": "ddg-card-game",
+  "version": "0.0.1",
+  "description": "english translation of the densha de go card game",
+  "homepage": "https://github.com/swolekat/ddg-card-game#readme",
+  "bugs": {
+    "url": "https://github.com/swolekat/ddg-card-game/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swolekat/ddg-card-game.git"
+  },
+  "license": "MIT",
+  "author": "Swolekat",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "make-deck": "node ./tools/node-make-deck-image.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.15.0"
+  }
+}
