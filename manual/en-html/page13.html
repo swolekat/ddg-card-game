@@ -4,60 +4,136 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./assets/common.css">
-  <style>
-    .top-section{
-        background: var(--yamanote-green);
-        padding: 20px 150px;
-        height: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .ddg-logo {
-        width: 100%;
-    }
+    <style>
+        .main-content {
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            flex-grow: 1;
+        }
 
-    .card-game {
-        width: 300px;
-    }
+        .step {
+            font-size: 36px;
+        }
 
-    .game-instructions {
-        font-size: 48px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
+        .steps-and-table {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
 
-    .bottom-section {
-        padding: 60px 100px;
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 48px;
-        justify-content: space-between;
-    }
+        .steps {
+            display: flex;
+            flex-direction: column;
+            font-size: 30px;
+            gap: 40px;
+        }
 
-  </style>
+        .table {
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 30px repeat(5, 1fr);
+            background: #ccc;
+            padding: 20px;
+            font-size: 22px;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .header {
+            font-weight: bold;
+            height: 10px;
+        }
+
+        .interference-card,
+        .guard-card,
+        .no-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            border-radius: 5px;
+        }
+
+        .interference-card {
+            background: var(--tokaido-orange);
+        }
+
+        .guard-card {
+            background: var(--yamanote-green);
+        }
+
+        .no-card {
+            border: 2px dashed black;
+        }
+
+    </style>
 </head>
 <body>
-  <div class="page-content">
-    <div class="top-section">
-        <img src="assets/ddgLogo.webp" class="ddg-logo" />
-        <img src="assets/card-game.png" class="card-game" />
-        <div class="game-instructions">
-            Game Instructions
+<div class="page-content">
+    <div class="arrow-header">
+        <div class="arrow-header-text">
+            How to use Guard Cards
         </div>
     </div>
-      <div class="bottom-section">
-          <div class="paragraph">
-            Drive the train from station to station and stop it exactly! Watch out for accidents and make sure to obey the signals. Use all sorts of tricks to slow down your opponents and reach the station before anyone else!
-          </div>
-          <div>
-              Become a train god! 「DENSHA DE GO!」
-          </div>
-          <img src="assets/matsudaya%20logo.png" class="matsudaya-logo" />
-      </div>
-  </div>
-
+    <div class="main-content">
+        <div class="step">
+            There are two Guard cards: Go cards and Emergency Break Cards. Go cards remove Signal Interference cards and Emergency Breaks remove Emergency cards.
+        </div>
+        <div class="steps-and-table">
+            <div class="steps">
+                <div>
+                    1) An Interference card is played on you.
+                </div>
+                <div>
+                    2) Draw a card (because it is now your turn) and play the appropriate Guard card. If you don't have the right card, resolve the affects of the interference card and play normally.
+                </div>
+                <div>
+                    3) If you played the Guard card, place both the Interference card and Guard card in the discard pile.
+                </div>
+            </div>
+            <div class="table">
+                <div class="header">
+                    Interference Card
+                </div>
+                <div class="header">
+                    Guard Card
+                </div>
+                <div class="interference-card">
+                    Stop Card
+                </div>
+                <div class="guard-card">
+                    Go Card
+                </div>
+                <div class="interference-card">
+                    Caution Card
+                </div>
+                <div class="guard-card">
+                    Go Card
+                </div>
+                <div class="interference-card">
+                    Railroad Crossing Accident
+                </div>
+                <div class="guard-card">
+                    Emergency Break
+                </div>
+                <div class="interference-card">
+                    Slow Leading Train
+                </div>
+                <div class="guard-card">
+                    Emergency Break
+                </div>
+                <div class="interference-card">
+                    Line Shut Down
+                </div>
+                <div class="no-card">
+                    No card
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
