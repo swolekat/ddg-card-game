@@ -6,6 +6,6 @@ If you don't know what Densha De Go! is maybe check out [my video](https://www.y
 
 **I DON'T KNOW JAPANESE WELL ENOUGH TO TRANSLATE SO PLEASE EXCUSE ANY ERRORS WITH THE MANUAL. IF YOU'D LIKE TO HELP I'D DEFINITELY APPRECIATE IT**
 
-If you'd like to play the game make sure to download the mod from the workshop. 
+If you'd like to play the game make sure to download the mod from the [workshop.](https://steamcommunity.com/sharedfiles/filedetails/?id=3535954207)
 
 Don't forget to read the manual [here](./manual/densha%20de%20go%20card%20game%20english%20manual.pdf)!
